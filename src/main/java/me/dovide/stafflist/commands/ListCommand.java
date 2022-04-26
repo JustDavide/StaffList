@@ -84,7 +84,7 @@ public class ListCommand implements CommandExecutor {
 
             String founderMex = plugin.getConfig().getString("list.founder").replace("%listPlayers%", String.join(", ", founderList)),
                     gestoreMex = plugin.getConfig().getString("list.gestore").replace("%listPlayers%", String.join(", ", gestoreList)),
-                    adminMex = plugin.getConfig().getString("list.admin").replace("%listPlayers%", String.join(", ", gestoreList)),
+                    adminMex = plugin.getConfig().getString("list.admin").replace("%listPlayers%", String.join(", ", adminList)),
                     developerMex = plugin.getConfig().getString("list.developer").replace("%listPlayers%", String.join(", ", developerList)),
                     pluginnerMex = plugin.getConfig().getString("list.pluginner").replace("%listPlayers%", String.join(", ", pluginnerList)),
                     builderMex = plugin.getConfig().getString("list.builder").replace("%listPlayers%", String.join(", ", builderList)),
