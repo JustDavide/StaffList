@@ -11,3 +11,4 @@ commands:
     aliases: [ sl, staff ]
   stafflistadmin:
     aliases: [ sla ]
+#  testdovide:

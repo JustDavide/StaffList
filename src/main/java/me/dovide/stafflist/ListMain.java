@@ -2,9 +2,11 @@ package me.dovide.stafflist;
 
 import me.dovide.stafflist.commands.ListCommand;
 import me.dovide.stafflist.commands.SlAdmin;
+import me.dovide.stafflist.commands.Testing;
 import me.dovide.stafflist.config.CustomConfig;
 import net.milkbowl.vault.permission.Permission;
 import org.bukkit.configuration.InvalidConfigurationException;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
@@ -32,6 +34,10 @@ public final class ListMain extends JavaPlugin {
         // Commands
         getCommand("stafflist").setExecutor(new ListCommand());
         getCommand("stafflistadmin").setExecutor(new SlAdmin());
+//        getCommand("testdovide").setExecutor(new Testing());
+
+        // Perms
+        setupPermissions();
 
     }
 
@@ -66,6 +72,12 @@ public final class ListMain extends JavaPlugin {
 
     public void reloadCustomConfig() {
         config = createConfig("config.yml");
+    }
+
+    private boolean setupPermissions() {
+        RegisteredServiceProvider<Permission> rsp = getServer().getServicesManager().getRegistration(Permission.class);
+        perms = rsp.getProvider();
+        return perms != null;
     }
 
     public static Permission getPermissions() {

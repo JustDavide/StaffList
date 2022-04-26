@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ListCommand implements CommandExecutor {
@@ -22,7 +23,6 @@ public class ListCommand implements CommandExecutor {
         Plugin plugin = ListMain.getInstance();
 
         Player player = (Player) sender;
-        String playerGroup = ListMain.getPermissions().getPrimaryGroup(player);
 
         List<String> founderList = new ArrayList<>(),
                 gestoreList = new ArrayList<>(),
@@ -51,6 +51,9 @@ public class ListCommand implements CommandExecutor {
 
         for (Player allPlayers : Bukkit.getOnlinePlayers()) {
 
+            String playerGroup = ListMain.getPermissions().getPrimaryGroup(allPlayers);
+            String specialGroups = Arrays.toString(ListMain.getPermissions().getPlayerGroups(allPlayers));
+
             if (playerGroup.equalsIgnoreCase(founderPerm))
                 founderList.add(allPlayers.getName());
 
@@ -69,10 +72,10 @@ public class ListCommand implements CommandExecutor {
             if (playerGroup.equalsIgnoreCase(builderPerm))
                 builderList.add(allPlayers.getName());
 
-            if (playerGroup.equalsIgnoreCase(modPerm))
+            if (specialGroups.contains(modPerm))
                 modList.add(allPlayers.getName());
 
-            if (playerGroup.equalsIgnoreCase(supporterPerm))
+            if(specialGroups.contains(supporterPerm))
                 supporterList.add(allPlayers.getName());
 
         }
@@ -122,6 +125,7 @@ public class ListCommand implements CommandExecutor {
             if (!(builderList.isEmpty()))
                 player.sendMessage(builderMex);
 
+            player.sendMessage("");
 
         } else
             player.sendMessage(ColorUtil.colorize("&cNessuno staff è online"));
