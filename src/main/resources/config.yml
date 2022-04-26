@@ -1,0 +1,27 @@
+group:
+  founder: founder
+  gestore: gestore
+  admin: admin
+  developer: developer
+  pluginner: pluginner
+  builder: builder
+  mod: mod
+  supporter: supporter
+
+list:
+  start-mex: "&9Lista Staff"
+  founder: "&4Founder » %listPlayers%"
+  gestore: "&2Gestore » %listPlayers%"
+  admin: "&cAdmin » %listPlayers%"
+  developer: "&cDeveloper » %listPlayers%"
+  pluginner: "&3Pluginner » %listPlayers%"
+  builder: "&eBuilder » %listPlayers%"
+  mod: "&5Mod » %listPlayers%"
+  supporter: "&aSupporter » %listPlayers%"
+  usage: "&cUsa: &7/sl"
+
+admin:
+  reload: "&aPlugin ricaricato con successo"
+  perm: outlist.admin
+  usage: "&cUsa: &7/sla reload"
+  noperm: "&cNon hai abbastanza permessi per eseguire questo comando"

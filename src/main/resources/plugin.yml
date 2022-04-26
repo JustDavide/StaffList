@@ -1,0 +1,13 @@
+name: StaffList
+version: '${project.version}'
+main: me.dovide.stafflist.ListMain
+api-version: 1.17
+prefix: SL
+authors: [ Dovide ]
+description: Staff List Per OutLaws
+website: www.outlawsrp.net
+commands:
+  stafflist:
+    aliases: [ sl, staff ]
+  stafflistadmin:
+    aliases: [ sla ]
